@@ -1,7 +1,4 @@
 import React from 'react'
-import QuestionList from './QuestionList'
-import Leaderboard from './Leaderboard'
-import AddQForm from './AddQForm'
 
 function Header() {
 
@@ -13,9 +10,6 @@ function Header() {
       <img src="" alt="Logo" />
       <p>USER'S NAME</p>
       <button onClick={handleClick}name="toggle">Light Mode</button>
-      <QuestionList />
-      <Leaderboard />
-      <AddQForm />
     </div>
   )
 }
