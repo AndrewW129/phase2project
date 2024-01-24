@@ -7,7 +7,7 @@ function App() {
   const [name, setName] = useState('')
   const [isDarkMode, setIsDarkMode] = useState(false)
 
-  const mode = isDarkMode? 'Light Mode' : 'Dark Mode'
+  const mode = isDarkMode? 'dark mode' : 'light mode'
 
   function handleClick() {
     setIsDarkMode(!isDarkMode)
