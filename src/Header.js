@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Header() {
+function Header({name}) {
 
   const handleClick = (e) => e.target.textContent === 'Light Mode'? e.target.textContent = 'Dark Mode' : e.target.textContent = 'Light Mode'
 
@@ -8,7 +8,7 @@ function Header() {
 
     <div>Header
       <img src="" alt="Logo" />
-      <p>USER'S NAME</p>
+      <p>{name}</p>
       <button onClick={handleClick}name="toggle">Light Mode</button>
     </div>
   )
