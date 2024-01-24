@@ -1,18 +1,17 @@
-import React,{useState,useEffect} from 'react'
-import QuestionItem from './QuestionItem'
+// import React,{useState,useEffect} from 'react'
+// import QuestionItem from './QuestionItem'
 
 function QuestionList() {
-  const [questions,setQuestions] = useState([])
+  // const [questions,setQuestions] = useState([])
 
   
-  useEffect(() => {
-      fetch('')
-      .then(res => res.json())
-      .then(data => setQuestions(data.results))
-    }, [])
+  // useEffect(() => {
+  //     fetch('')
+  //     .then(res => res.json())
+  //     .then(setQuestions)
+  //   }, [])
 
-    console.log(questions)
-  
+  // console.log(questions)
 
 
   return (

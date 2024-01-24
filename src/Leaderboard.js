@@ -2,7 +2,7 @@ import React from 'react'
 
 function Leaderboard() {
   return (
-    <div>
+    <div>Leaderboard
       {/* Leaderboard info Objs list */}
     </div>
   )

@@ -5,11 +5,17 @@ import Welcome from './Welcome';
 
 function App() {
   const [name, setName] = useState('')
+  const [isDarkMode, setIsDarkMode] = useState(false)
 
+  const mode = isDarkMode? 'Light Mode' : 'Dark Mode'
+
+  function handleClick() {
+    setIsDarkMode(!isDarkMode)
+  }
 
   return (
-    <div className="App">
-      <Header name={name}/>
+    <div className={mode}>
+      <Header mode={mode} name={name} isDarkMode={isDarkMode} handleClick={handleClick} />
       <Welcome onNameChange={setName} />
     </div>
   );
