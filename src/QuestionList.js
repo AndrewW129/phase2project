@@ -1,9 +1,26 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import QuestionItem from './QuestionItem'
 
 function QuestionList() {
+  const [questions,setQuestions] = useState([])
+
+  
+  useEffect(() => {
+      fetch('')
+      .then(res => res.json())
+      .then(data => setQuestions(data.results))
+    }, [])
+
+    console.log(questions)
+  
+
 
   return (
-    <div>QuestionList</div>
+    <div>
+      <h1>Question</h1>
+      <p>Answer</p>
+      <p>Answer</p>
+    </div>
   )
 }
 
