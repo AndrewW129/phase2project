@@ -3,8 +3,10 @@ import AddQForm from './AddQForm';
 import QuestionList from './QuestionList';
 import Leaderboard from './Leaderboard'
 
-function Welcome({onNameChange}) {
+
+function Welcome({name, onNameChange}) {
   const [questions, setQuestions] = useState([])
+  const [points, setPoints] = useState(0)
 
   const handleNameChange = (e) => {
     onNameChange(e.target.value)
@@ -13,18 +15,23 @@ function Welcome({onNameChange}) {
   const addQuestion = (newQuestion) => {
     setQuestions([...questions, newQuestion])
   }
+
+  const addPoints = (points) => {
+    setPoints(points)
+  }
+
   return (
     <div>
-      <div>Welcome Section
+      <div>
         <h1>Welcome to Random Riddler</h1>
         <p>Don't get Riddled</p>
         <input onChange={handleNameChange} type="text" placeholder="Enter a name..." />
-        <button type="submit">Proceed</button>
+        <button type="click">Proceed</button>
       </div>
       <div> Navigation
         <AddQForm onAddQ={addQuestion} />
-        <QuestionList questions={questions} setQuestions={setQuestions}/>
-        <Leaderboard />
+        <QuestionList points={points} onScore={addPoints} questions={questions} setQuestions={setQuestions}/>
+        <Leaderboard points={points} userName={name}/>
       </div>
     </div>
   )

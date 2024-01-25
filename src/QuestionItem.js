@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 
-function QuestionItem({questions}) {
+function QuestionItem({questions, onScore, points}) {
     const questionsList = questions.map(question => question.question.text)
     const correctAnswers = questions.map(question => question.correctAnswer)
 
+    console.log(questions)
 
     const randomQuestion = () => {
         const randomNum = Math.floor(Math.random() * questionsList.length)
@@ -27,7 +28,10 @@ function QuestionItem({questions}) {
     const handleFormSubmit = (e) => {
         e.preventDefault()
         correctAnswers.map(answer => {if (userAnswer === answer) {
-            return alert('Correct!')
+            return (
+                onScore(points + 10),
+                alert('Correct!')
+                )
         } else {
             return setCurrentQuestion(randomQuestion())
         }})

@@ -22,8 +22,10 @@ function AddQForm({onAddQ}) {
   //   })
   //  .then(res => res.json())
   //  .then(onAddQ)
+  e.target.reset()
   console.log(e)
   }
+
   return (
     <div>
         <form onSubmit={handleSubmit}>

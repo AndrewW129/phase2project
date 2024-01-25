@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import QuestionItem from './QuestionItem'
 
-function QuestionList({questions, setQuestions}) {
+function QuestionList({questions, setQuestions, onScore, points}) {
 
   useEffect(() => {
     let isMounted = true;
@@ -24,7 +24,7 @@ function QuestionList({questions, setQuestions}) {
 
   return (
     <div>
-      <QuestionItem questions={questions}/>
+      <QuestionItem onScore={onScore} questions={questions}/>
     </div>
   )
 }
