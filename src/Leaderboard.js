@@ -1,19 +1,13 @@
-import React,{useState} from 'react'
+import React from 'react'
 
-const initialBoardData = {
-  id: '',
-  name: '',
-  score: ''
-}
 
-function Leaderboard() {
-  const [boardData, setBoardData] = useState(initialBoardData)
+function Leaderboard({userName, points}) {
 
   //map over input for name and input for score to put data into the table
   return (
-    <div>
+    <div className='scoreboard'>
       <h2>
-        Leaderboard
+        Scoreboard
       </h2>
       <table>
         <thead>
@@ -23,8 +17,10 @@ function Leaderboard() {
           </tr>
         </thead>
         <tbody>
-          <td>User Name</td>
-          <td>User Score</td>
+          <tr>
+            <td>{userName}</td>
+            <td>{points}</td>
+          </tr>
         </tbody>
       </table>
     </div>
