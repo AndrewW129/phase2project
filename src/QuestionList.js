@@ -19,12 +19,12 @@ function QuestionList({questions, setQuestions, onScore, points}) {
       // Cleanup: set isMounted to false when component unmounts
       isMounted = false;
     };
-  }, []);
+}, []);
   
 
   return (
     <div>
-      <QuestionItem onScore={onScore} questions={questions}/>
+      <QuestionItem points={points} onScore={onScore} questions={questions}/>
     </div>
   )
 }
