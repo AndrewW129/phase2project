@@ -1,24 +1,30 @@
-// import React,{useState,useEffect} from 'react'
-// import QuestionItem from './QuestionItem'
+import React,{useState,useEffect} from 'react'
+import QuestionItem from './QuestionItem'
 
-function QuestionList() {
-  // const [questions,setQuestions] = useState([])
+function QuestionList({questions, setQuestions}) {
 
+  useEffect(() => {
+    let isMounted = true;
   
-  // useEffect(() => {
-  //     fetch('')
-  //     .then(res => res.json())
-  //     .then(setQuestions)
-  //   }, [])
-
-  // console.log(questions)
-
+    fetch('https://the-trivia-api.com/v2/questions')
+    .then(response => response.json())
+    .then(data => {
+        if (isMounted) {
+          // Update state only if the component is still mounted
+          setQuestions(data);
+        }
+      })
+  
+    return () => {
+      // Cleanup: set isMounted to false when component unmounts
+      isMounted = false;
+    };
+  }, []);
+  
 
   return (
     <div>
-      <h1>Question</h1>
-      <p>Answer</p>
-      <p>Answer</p>
+      <QuestionItem questions={questions}/>
     </div>
   )
 }
