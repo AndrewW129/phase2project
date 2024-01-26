@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
-import AddQForm from './AddQForm';
+import {Routes, Route} from 'react-router-dom'
 import QuestionList from './QuestionList';
+import MyQuestions from './MyQuestions'
 import Leaderboard from './Leaderboard'
-import Welcome from './QuestionsContainer'
+import AddQForm from './AddQForm';
 
 
-function QuestionsContainer({name, onNameChange}) {
+function QuestionsContainer({name}) {
   const [questions, setQuestions] = useState([])
   const [points, setPoints] = useState(0)
   
@@ -18,11 +19,13 @@ function QuestionsContainer({name, onNameChange}) {
   }
 
   return (
-      <div> Navigation
-        <Welcome name={name} onNameChange={onNameChange} />
-        <AddQForm onAddQ={addQuestion} />
-        <QuestionList points={points} onScore={addPoints} questions={questions} setQuestions={setQuestions}/>
-        <Leaderboard points={points} userName={name}/>
+      <div>
+        <Routes>
+          <Route path='add' element={<AddQForm onAddQ={addQuestion} />} />
+          <Route path='show' element={<QuestionList points={points} onScore={addPoints} questions={questions} setQuestions={setQuestions}/>} />
+          <Route path='leaderboard' element={<Leaderboard points={points} userName={name}/>} />
+          <Route path='userQuestions' element={<MyQuestions />} />
+        </Routes>
       </div>
   )
 }

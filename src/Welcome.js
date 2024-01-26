@@ -1,15 +1,13 @@
 import React from 'react'
 
 function Welcome() {
-    const handleNameChange = (e) => {
-        onNameChange(e.target.value)
-      }
+    // const handleNameChange = (e) => {
+    //     onNameChange(e.target.value)
+    //   }
   return (
     <div>
         <h1>Welcome to Random Riddler</h1>
         <p>Don't get Riddled</p>
-        <input onChange={handleNameChange} type="text" placeholder="Enter a name..." />
-        <button type="click">Proceed</button>
     </div>
   )
 }

@@ -1,10 +1,8 @@
 import React,{useState} from'react';
 import './App.css';
 import Header from './Header';
-import Welcome from './QuestionsContainer';
-import QuestionList from './QuestionList';
-import AddQForm from './AddQForm';
-import Leaderboard from './Leaderboard';
+import Welcome from './Welcome';
+import QuestionsContainer from './QuestionsContainer';
 import NavBar from './NavBar';
 import {Routes, Route} from 'react-router-dom'
 
@@ -24,10 +22,8 @@ function App() {
       <Header name={name} isDarkMode={isDarkMode} handleClick={handleClick} />
       <NavBar />
       <Routes>
+        <Route path='/questions/*' element={<QuestionsContainer name={name} onNameChange={setName} />} />
         <Route path='/' element={<Welcome name={name} onNameChange={setName} />} />
-        <Route path='/questions' element={<QuestionList />} />
-        <Route path='/addQForm' element={<AddQForm />} />
-        <Route path='/leaderboard' element={<Leaderboard />} />
       </Routes>
     </div>
   );

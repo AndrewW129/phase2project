@@ -1,9 +1,6 @@
 import React from 'react';
-import { Routes, Route, NavLink } from 'react-router-dom'
-import Welcome from './QuestionsContainer'
-import QuestionList from './QuestionList'
-import AddQForm from './AddQForm'
-import Leaderboard from './Leaderboard'
+import { NavLink } from 'react-router-dom'
+
 
 
 function NavBar() {
@@ -16,13 +13,16 @@ function NavBar() {
             <NavLink to="/">Welcome</NavLink>
           </li>
           <li>
-            <NavLink to="/questions">Questions</NavLink>
+            <NavLink to="/questions/add">Add Question</NavLink>
           </li>
           <li>
-            <NavLink to="/addQForm">Add Question</NavLink>
+            <NavLink to="/questions/show">Show Question</NavLink>
           </li>
           <li>
-            <NavLink to="/leaderboard">Leaderboard</NavLink>
+            <NavLink to="/questions/leaderboard">Leaderboard</NavLink>
+          </li>
+          <li>
+            <NavLink to='/questions/userQuestions'>My Questions</NavLink>
           </li>
         </ul>
       </nav>
