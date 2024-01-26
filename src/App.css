@@ -29,7 +29,13 @@ div.dark.mode {
 /* NavBar.css */
 
 .navBar {
-  background-color: grey;
+  width: 95%;
+  padding: 20px;
+  background-color: #f0f0f046;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  text-align: center;
   padding: 10px;
 }
 
@@ -60,4 +66,44 @@ NavLink:hover {
 
 .active {
   color: #ffcc00; /* Change the color for the active link */
+}
+input {
+  border-radius: 10px;
+  margin: 2.5px;
+}
+button {
+  border-radius: 10px;
+  color: black;
+  background-color: rgb(85, 220, 70)
+}
+
+.q-container {
+  width: 95%;
+  padding: 20px;
+  background-color: #f0f0f046;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  text-align: center;
+}
+
+.userQuestion {
+  width: 33%;
+  padding: 20px;
+  background-color: #f0f0f046;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  text-align: center;
+}
+
+.q-form {
+  width: 50%;
+  padding: 20px;
+  background-color: #f0f0f046;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  text-align: center;
+  justify-content: center;
 }

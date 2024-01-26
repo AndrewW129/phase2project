@@ -7,12 +7,11 @@ function QuestionItem({questions, onScore, points}) {
             <div key={question.id}>
                 <p>{question.difficulty}</p>
                 <h1>{question.question.text}</h1>
-                <p>{question.correct_answer}</p>
             </div>
         )
     })
     
-    console.log(question)
+    console.log(questions.map(question => question.correctAnswer))
     const [userAnswer, setUserAnswer] = useState('')
 
     const handleChange = (e) => {
@@ -25,6 +24,12 @@ function QuestionItem({questions, onScore, points}) {
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
+        if (userAnswer.toLowerCase() === questions[0].correctAnswer.toLowerCase()) {
+            onScore(points + 10)
+            alert('Correct Answer!')
+        } else {
+            alert('Wrong Answer!')
+        }
     }
 
   return (
