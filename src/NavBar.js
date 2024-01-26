@@ -1,13 +1,32 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
 
+
+
 function NavBar() {
-  return (
-    <nav>
-        <NavLink to="/QuestionList" >Question List</NavLink>
-        <NavLink to="/Leaderboard" >Leaderboard</NavLink>
-        <NavLink to="/AddQForm" >Add Question</NavLink>
-    </nav>
+
+    return (
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <NavLink to="/">Welcome</NavLink>
+          </li>
+          <li>
+            <NavLink to="/questions/add">Add Question</NavLink>
+          </li>
+          <li>
+            <NavLink to="/questions/show">Show Question</NavLink>
+          </li>
+          <li>
+            <NavLink to="/questions/leaderboard">Leaderboard</NavLink>
+          </li>
+          <li>
+            <NavLink to='/questions/userQuestions'>My Questions</NavLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
   )
 }
 

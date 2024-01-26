@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useEffect} from 'react'
 import QuestionItem from './QuestionItem'
 
 function QuestionList({questions, setQuestions, onScore, points}) {
@@ -6,7 +6,7 @@ function QuestionList({questions, setQuestions, onScore, points}) {
   useEffect(() => {
     let isMounted = true;
   
-    fetch('https://the-trivia-api.com/v2/questions')
+    fetch('https://the-trivia-api.com/v2/questions?limit=1')
     .then(response => response.json())
     .then(data => {
         if (isMounted) {
