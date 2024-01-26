@@ -5,7 +5,7 @@ function Header({isDarkMode, name, handleClick}) {
   return (
 
     <div className={isDarkMode? 'dark mode' : 'light mode'}>
-      <button onClick={handleClick} name="toggle">{isDarkMode? 'Light mode' : 'Dark mode'}</button>
+      <button id='darkmode' onClick={handleClick} name="toggle">{isDarkMode? 'Light mode' : 'Dark mode'}</button>
     </div>
   )
 }

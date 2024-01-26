@@ -11,9 +11,9 @@ function MyQuestions() {
 
     const userQuestionsList = userQuestions.map((question) => { 
         return (
-            <ul className='user-question'>
+            <ul className='userQuestion'>
                 <li key={question.id}>
-                    <p> Difficulty: {question.difficulty}</p>
+                    <p>Difficulty: {question.difficulty}</p>
                     <p>Question: {question.question}</p>
                     <p>Answer: {question.answer}</p>
                 </li>

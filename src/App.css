@@ -9,3 +9,101 @@ div.dark.mode {
   align-items: center;
   justify-content: center;
 }
+
+.welcome {
+  width: 95%;
+  padding: 20px;
+  background-color: #f0f0f046;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  text-align: center;
+}
+
+.welcome p {
+  color: #333;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* NavBar.css */
+
+.navBar {
+  width: 95%;
+  padding: 20px;
+  background-color: #f0f0f046;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px;
+}
+
+nav {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+NavLink {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+NavLink:hover {
+  color: #ffcc00; /* Change the color on hover as desired */
+}
+
+.active {
+  color: #ffcc00; /* Change the color for the active link */
+}
+input {
+  border-radius: 10px;
+  margin: 2.5px;
+}
+button {
+  border-radius: 10px;
+  color: black;
+  background-color: rgb(85, 220, 70)
+}
+
+.q-container {
+  width: 95%;
+  padding: 20px;
+  background-color: #f0f0f046;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  text-align: center;
+}
+
+.userQuestion {
+  width: 33%;
+  padding: 20px;
+  background-color: #f0f0f046;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  text-align: center;
+}
+
+.q-form {
+  width: 50%;
+  padding: 20px;
+  background-color: #f0f0f046;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  text-align: center;
+  justify-content: center;
+}
