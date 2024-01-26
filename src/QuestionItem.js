@@ -1,52 +1,45 @@
 import React,{useState} from 'react'
 
 function QuestionItem({questions, onScore, points}) {
-    const questionsList = questions.map(question => question.question.text)
-    const correctAnswers = questions.map(question => question.correctAnswer)
-
-    console.log(questions)
-
-    const randomQuestion = () => {
-        const randomNum = Math.floor(Math.random() * questionsList.length)
-        const randomQuestion = questionsList[randomNum]
-        return randomQuestion
-    }
     
-    const [currentQuestion, setCurrentQuestion] = useState('To Load a question click New Question!')
-
-
+    const question = questions.map(question => {
+        return (
+            <div key={question.id}>
+                <p>{question.difficulty}</p>
+                <h1>{question.question.text}</h1>
+                <p>{question.correct_answer}</p>
+            </div>
+        )
+    })
+    
+    console.log(question)
     const [userAnswer, setUserAnswer] = useState('')
 
     const handleChange = (e) => {
         setUserAnswer(e.target.value)
     }
 
-    const handleClick = () => {
-        setCurrentQuestion(randomQuestion())
+    const newQuestion = (e) => {
+        console.log('New Question Generated') 
     }
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
-        correctAnswers.map(answer => {if (userAnswer === answer) {
-            return (
-                onScore(points + 10),
-                alert('Correct!')
-                )
-        } else {
-            return setCurrentQuestion(randomQuestion())
-        }})
     }
 
-    
-
   return (
-    <div>
-        <h1>{currentQuestion}</h1>
-        <form onSubmit={handleFormSubmit}>
+    <div className='q-container'>
+        <p>Points: {points}</p>
+        <div className='question'>
+            {question}
+        </div>
+        <form onSubmit={handleFormSubmit} className='q-form'>
             <input onChange={handleChange} type="text" value={userAnswer} placeholder='Your Answer is...'/>
-            <button type='submit'>Submit Answer</button>
+            <button type='submit' className='q-button' >Submit Answer</button>
         </form>
-        <button onClick={handleClick}>New Question</button>
+        <form onSubmit={newQuestion}>
+            <button >New Question</button>
+        </form>    
     </div>
   )
 }
