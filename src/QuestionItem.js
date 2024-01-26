@@ -33,7 +33,9 @@ function QuestionItem({questions, onScore, points}) {
                 alert('Correct!')
                 )
         } else {
-            return setCurrentQuestion(randomQuestion())
+            return (
+                onScore(points - 10),
+                setCurrentQuestion(randomQuestion()))
         }})
     }
 
