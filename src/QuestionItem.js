@@ -15,9 +15,15 @@ function QuestionItem({questions, onScore, points}) {
     
     let correctAnswer = questions.map(question => question.correctAnswer)
     const [userAnswer, setUserAnswer] = useState(initValue)
+    const [showAnswer, setShowAnswer] = useState(false)
 
     const handleChange = (e) => {
         setUserAnswer(e.target.value)
+    }
+
+    const toggleAnswer = (e) => {
+        e.preventDefault()
+        setShowAnswer(!showAnswer)
     }
 
     const handleFormSubmit = (e) => {
@@ -31,10 +37,6 @@ function QuestionItem({questions, onScore, points}) {
         }
     }
 
-    const showAnswer = () => {
-        alert(correctAnswer)
-    }
-
   return (
     <div className='q-container'>
         <div className='question'>
@@ -45,8 +47,15 @@ function QuestionItem({questions, onScore, points}) {
             <button type='submit' className='q-button' >Submit Answer</button>
         </form>
         <>
-            <button onClick={showAnswer}>Show Answer</button>
-        </>    
+          {showAnswer? (
+            <button onClick={toggleAnswer}>Show Answer</button> 
+        ) : (
+            <>
+              <button onClick={toggleAnswer}>Hide Answer</button>
+              <h3>{correctAnswer}</h3>
+            </>
+        )}
+        </> 
     </div>
   )
 }
