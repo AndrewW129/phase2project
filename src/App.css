@@ -99,6 +99,7 @@ button {
 }
 
 .q-form {
+  display: flex;
   width: 75%;
   padding: 20px;
   background-color: #f0f0f046;
@@ -106,4 +107,10 @@ button {
   margin: 20px auto;
   text-align: center;
   justify-content: center;
+  align-items: center;
 }
+
+.q-form input {
+  margin: 10px
+}
+

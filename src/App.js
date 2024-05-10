@@ -9,9 +9,8 @@ import {Routes, Route} from 'react-router-dom'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false)
-  const [name, setName] = useState('')
 
-  function handleClick() {
+  function toggleMode() {
     setIsDarkMode(!isDarkMode)
   }
 
@@ -19,11 +18,11 @@ function App() {
 
   return (
     <div style={{height: 830}} className={mode}>
-      <Header name={name} isDarkMode={isDarkMode} handleClick={handleClick} />
+      <Header isDarkMode={isDarkMode} toggleMode={toggleMode} />
       <NavBar />
       <Routes>
-        <Route path='/questions/*' element={<QuestionsContainer name={name} onNameChange={setName} />} />
-        <Route path='/' element={<Welcome name={name} onNameChange={setName} />} />
+        <Route path='/questions/*' element={<QuestionsContainer />} />
+        <Route path='/' element={<Welcome />} />
       </Routes>
     </div>
   );

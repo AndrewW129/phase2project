@@ -1,7 +1,7 @@
-import React,{useEffect} from 'react'
+import { useEffect } from 'react'
 import QuestionItem from './QuestionItem'
 
-function QuestionList({questions, setQuestions, onScore, points}) {
+function QuestionList({ questions, setQuestions }) {
 
   useEffect(() => {
     fetch('https://the-trivia-api.com/v2/questions?limit=1')
@@ -9,10 +9,9 @@ function QuestionList({questions, setQuestions, onScore, points}) {
     .then(data => setQuestions(data))
 }, []);
   
-
   return (
     <div>
-      <QuestionItem points={points} onScore={onScore} questions={questions}/>
+      <QuestionItem questions={questions}/>
     </div>
   )
 }
