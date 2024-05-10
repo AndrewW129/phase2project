@@ -68,6 +68,7 @@ NavLink:hover {
   color: #ffcc00; /* Change the color for the active link */
 }
 input {
+  width: 75%;
   border-radius: 10px;
   margin: 2.5px;
 }
@@ -98,11 +99,10 @@ button {
 }
 
 .q-form {
-  width: 50%;
+  width: 75%;
   padding: 20px;
   background-color: #f0f0f046;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 20px auto;
   text-align: center;
   justify-content: center;

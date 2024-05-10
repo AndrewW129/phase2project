@@ -18,7 +18,7 @@ function App() {
   const mode = isDarkMode? 'dark mode' : 'light mode'
 
   return (
-    <div className={mode}>
+    <div style={{height: 830}} className={mode}>
       <Header name={name} isDarkMode={isDarkMode} handleClick={handleClick} />
       <NavBar />
       <Routes>

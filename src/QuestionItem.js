@@ -28,7 +28,6 @@ function QuestionItem({questions, onScore, points}) {
 
     const handleFormSubmit = (e) => {
         if (userAnswer.toLowerCase() === questions[0].correctAnswer.toLowerCase()) {
-            onScore(points + 10)
             alert('Correct Answer!')
         } else {
             e.preventDefault()

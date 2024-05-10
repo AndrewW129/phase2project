@@ -19,14 +19,14 @@ function QuestionsContainer({name}) {
   }
 
   return (
-      <div>
+      <>
         <Routes>
           <Route path='add' element={<AddQForm onAddQ={addQuestion} />} />
           <Route path='show' element={<QuestionList points={points} onScore={addPoints} questions={questions} setQuestions={setQuestions}/>} />
           <Route path='leaderboard' element={<Leaderboard points={points} userName={name}/>} />
           <Route path='userQuestions' element={<MyQuestions />} />
         </Routes>
-      </div>
+      </>
   )
 }
 
