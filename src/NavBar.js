@@ -15,9 +15,6 @@ function NavBar() {
             <NavLink to="/questions/show">Show Question</NavLink>
           </li>
           <li>
-            <NavLink to="/questions/leaderboard">Leaderboard</NavLink>
-          </li>
-          <li>
             <NavLink to='/questions/userQuestions'>My Questions</NavLink>
           </li>
         </ul>

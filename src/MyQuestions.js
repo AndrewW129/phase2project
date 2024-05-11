@@ -5,12 +5,8 @@ function MyQuestions() {
 
     useEffect(() => {
         fetch('http://localhost:3000/userQuestions')
-        .then(res => {
-            if (res.ok) {
-                res.json()
-            }
-        })
-        .then(data => console.log(data)) 
+        .then(res => res.json())
+        .then(data => setUserQuestions(data)) 
     }, [])
 
     const userQuestionsList = userQuestions.map((question) => { 
@@ -24,7 +20,7 @@ function MyQuestions() {
             </ul>
         )
     })
-    
+
     return (
         <div>
             {userQuestionsList}

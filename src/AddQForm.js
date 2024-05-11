@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const initialFormData= {
   question: '',
@@ -8,6 +9,8 @@ const initialFormData= {
 
 function AddQForm() {
   const [formData, setFormData] = useState(initialFormData)
+
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value})
@@ -23,6 +26,10 @@ function AddQForm() {
       body: JSON.stringify(formData)
     })
    .then(res => res.json())
+   .then(
+    alert('Question Added!'),
+    navigate('/questions/userQuestions')
+   )
   }
 
   return (
