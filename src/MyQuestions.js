@@ -1,12 +1,12 @@
-import React,{useState,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
 function MyQuestions() {
     const [userQuestions, setUserQuestions] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:3000/userQuestions')
-        .then(response => response.json())
-        .then(setUserQuestions) 
+        .then(res => res.json())
+        .then(data => setUserQuestions(data)) 
     }, [])
 
     const userQuestionsList = userQuestions.map((question) => { 
@@ -20,13 +20,11 @@ function MyQuestions() {
             </ul>
         )
     })
+
     return (
         <div>
             {userQuestionsList}
         </div>
     )
 }
-
-
-
 export default MyQuestions

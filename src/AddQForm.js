@@ -1,17 +1,21 @@
-import React,{useState} from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const initialFormData= {
   question: '',
   difficulty: '',
   answer: ''
 }
-function AddQForm({onAddQ}) {
+
+function AddQForm() {
   const [formData, setFormData] = useState(initialFormData)
+
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value})
   }
-  console.log(formData)
+  
   const handleSubmit = (e) => {
     e.preventDefault()
     fetch('http://localhost:3000/userQuestions', {
@@ -22,9 +26,10 @@ function AddQForm({onAddQ}) {
       body: JSON.stringify(formData)
     })
    .then(res => res.json())
-   .then(onAddQ)
-  e.target.reset()
-  console.log(e)
+   .then(
+    alert('Question Added!'),
+    navigate('/questions/userQuestions')
+   )
   }
 
   return (
@@ -34,7 +39,8 @@ function AddQForm({onAddQ}) {
             <input onChange={handleChange} name='difficulty' type="text" placeholder="Enter difficulty" />
             <input onChange={handleChange} name='question'type="text" placeholder="Enter question" />
             <input onChange={handleChange} name='answer' type="text" placeholder="Enter answer" />
-            <button type='submit'>Submit</button>
+            <br></br>
+            <button type='submit'>Add Question</button>
         </form>
     </div>
   )

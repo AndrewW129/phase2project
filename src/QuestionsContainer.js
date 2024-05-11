@@ -1,32 +1,21 @@
-import React,{useState} from 'react'
-import {Routes, Route} from 'react-router-dom'
-import QuestionList from './QuestionList';
+import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import QuestionList from './QuestionList'
 import MyQuestions from './MyQuestions'
-import Leaderboard from './Leaderboard'
-import AddQForm from './AddQForm';
+import AddQForm from './AddQForm'
 
 
-function QuestionsContainer({name}) {
+function QuestionsContainer() {
   const [questions, setQuestions] = useState([])
-  const [points, setPoints] = useState(0)
-  
-  const addQuestion = (newQuestion) => {
-    setQuestions([...questions, newQuestion])
-  }
-
-  const addPoints = (points) => {
-    setPoints(points)
-  }
 
   return (
-      <div>
+      <>
         <Routes>
-          <Route path='add' element={<AddQForm onAddQ={addQuestion} />} />
-          <Route path='show' element={<QuestionList points={points} onScore={addPoints} questions={questions} setQuestions={setQuestions}/>} />
-          <Route path='leaderboard' element={<Leaderboard points={points} userName={name}/>} />
+          <Route path='add' element={<AddQForm />} />
+          <Route path='show' element={<QuestionList questions={questions} setQuestions={setQuestions}/>} />
           <Route path='userQuestions' element={<MyQuestions />} />
         </Routes>
-      </div>
+      </>
   )
 }
 
