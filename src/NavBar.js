@@ -6,16 +6,16 @@ function NavBar() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Welcome</NavLink>
+            <NavLink style={{color: 'green'}} to="/">Welcome</NavLink>
           </li>
           <li>
-            <NavLink to="/questions/add">Add Question</NavLink>
+            <NavLink style={{color: 'green'}} to="/questions/add">Add Question</NavLink>
           </li>
           <li>
-            <NavLink to="/questions/show">Show Question</NavLink>
+            <NavLink style={{color: 'green'}} to="/questions/show">Show Question</NavLink>
           </li>
           <li>
-            <NavLink to='/questions/userQuestions'>My Questions</NavLink>
+            <NavLink style={{color: 'green'}} to='/questions/userQuestions'>View Questions</NavLink>
           </li>
         </ul>
       </nav>

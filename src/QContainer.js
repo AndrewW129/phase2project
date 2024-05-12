@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import QuestionList from './QuestionList'
-import MyQuestions from './MyQuestions'
-import AddQForm from './AddQForm'
+import QuestionList from './QList'
+import MyQuestions from './AddedQ'
+import AddQForm from './QForm'
 
 
 function QuestionsContainer() {

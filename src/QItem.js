@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import { useState } from 'react'
 
 let initValue = ''
 
@@ -48,12 +48,12 @@ function QuestionItem({ questions }) {
         <>
           {showAnswer? 
           (
-            <button onClick={toggleAnswer}>Show Answer</button> 
-          ) : (
             <>
               <button onClick={toggleAnswer}>Hide Answer</button>
               <h3>{correctAnswer}</h3>
             </>
+          ) : (
+            <button onClick={toggleAnswer}>Show Answer</button>
           )}
         </> 
     </div>
