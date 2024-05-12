@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import QuestionItem from './QuestionItem'
+import QuestionItem from './QItem'
 
 function QuestionList({ questions, setQuestions }) {
 

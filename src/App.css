@@ -26,8 +26,6 @@ div.dark.mode {
   margin: 0;
 }
 
-/* NavBar.css */
-
 .navBar {
   width: 95%;
   padding: 20px;
@@ -67,11 +65,13 @@ NavLink:hover {
 .active {
   color: #ffcc00; /* Change the color for the active link */
 }
+
 input {
   width: 75%;
   border-radius: 10px;
   margin: 2.5px;
 }
+
 button {
   border-radius: 10px;
   color: black;

@@ -1,11 +1,10 @@
-import React,{useState} from'react';
-import './App.css';
+import { useState } from'react';
+import { Routes, Route } from 'react-router-dom'
+import QuestionsContainer from './QContainer';
 import Header from './Header';
 import Welcome from './Welcome';
-import QuestionsContainer from './QuestionsContainer';
 import NavBar from './NavBar';
-import {Routes, Route} from 'react-router-dom'
-
+import './App.css';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false)
